@@ -1,0 +1,35 @@
+<form [formGroup]="form" novalidate>
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" id="nombre" formControlName="nombre" #nombre placeholder="Nombres">
+  </div>
+  <div padding *ngIf="form.controls.nombre.errors && form.controls.nombre.dirty">
+    <span class="text-danger">*Requerido</span>
+  </div>  
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" class="form-control" id="email" formControlName="email" #email placeholder="correo@dominio.com">
+  </div>
+  <div padding *ngIf="form.controls.email.errors && form.controls.email.dirty">
+    <span class="text-danger" *ngIf="form.controls.email.errors.email">*Requerido</span><br>
+    <span class="text-danger" *ngIf="form.controls.email.errors.email">Ingrese un formato de email correcto</span>
+  </div>  
+
+  <div class="form-group">
+    <label for="fechaNacimiento">Fecha de nacimiento</label>
+    <input type="text" class="form-control" id="fechaNacimiento" formControlName="fechaNacimiento" #fechaNacimiento placeholder="dd/MM/yyyy">
+  </div>  
+  <div padding *ngIf="form.controls.fechaNacimiento.errors && form.controls.fechaNacimiento.dirty">
+    <span class="text-danger">*Requerido</span>
+  </div>  
+
+  <div class="form-group">
+  	<label for="direccion">Dirección</label>
+	<input type="text" name="direccion" class="direccion form-control" id="direccion" formControlName="direccion"  #direccion>
+  </div>  
+</form>
+<div #map id="map"></div>
+<div class="menu">
+	<button class="btn btn-primary" (click)="save()">Guardar</button>
+</div>

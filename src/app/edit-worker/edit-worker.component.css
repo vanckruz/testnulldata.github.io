@@ -1,0 +1,11 @@
+.menu{
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+#map{
+	width: 100%;
+	min-height: 300px;
+}
